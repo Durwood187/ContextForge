@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "ContextForge — GitHub & Docs to LLM Context",
+  "short_name": "ContextForge",
+  "version": "1.0.0",
+  "description": "Turn the GitHub PR, issue, or docs page you're on into clean, structured Markdown for Claude, Cursor, or ChatGPT.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ContextForge: copy this page as LLM context",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "copy-context": {
+      "suggested_key": {
+        "default": "Alt+Shift+C",
+        "mac": "Alt+Shift+C"
+      },
+      "description": "Clip the current page to the clipboard"
+    }
+  }
+}

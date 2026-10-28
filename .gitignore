@@ -1,0 +1,5 @@
+node_modules/
+dist/
+contextforge-*.zip
+.DS_Store
+_to_delete/

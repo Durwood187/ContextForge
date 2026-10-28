@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ContextForge</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><img src="icons/icon32.png" alt="" width="18" height="18" /><span>ContextForge</span></div>
+  </header>
+
+  <main id="main">
+    <section class="source" id="source">
+      <div class="meta"><span id="kind" class="kind">Reading page…</span><span id="host" class="host"></span></div>
+      <h1 id="title" class="title"></h1>
+      <div class="stats" id="stats" hidden>
+        <span><b id="chars">0</b> chars</span><span class="dot">·</span><span><b id="tokens">0</b> tokens</span>
+      </div>
+    </section>
+
+    <ul id="warnings" class="warnings" hidden></ul>
+    <p id="error" class="error" hidden></p>
+
+    <button id="copy" class="primary" type="button" disabled>Copy for Claude / Cursor</button>
+
+    <details id="previewWrap" class="preview" hidden>
+      <summary>Preview</summary>
+      <pre id="preview"></pre>
+    </details>
+  </main>
+
+  <section id="settings" class="panel" hidden>
+    <h2>Settings</h2>
+    <label class="check"><input type="checkbox" id="includeDiff" /> Include PR diff</label>
+    <label class="field">Max diff size (chars)<input type="number" id="maxDiffChars" min="5000" step="5000" /></label>
+    <label class="check"><input type="checkbox" id="skipBots" /> Skip bot comments (CI, dependabot…)</label>
+    <label class="field">GitHub token <span class="hint">optional · fine-grained, read-only Issues + Pull requests + Contents</span>
+      <input type="password" id="githubToken" placeholder="github_pat_…" autocomplete="off" spellcheck="false" />
+    </label>
+    <p class="hint">Without a token, GitHub's public API allows ~10 PR clips/hour and can't see private repos (those fall back to reading the page). Stored only in this browser.</p>
+
+    <h2>Prompt wrapper</h2>
+    <label class="check"><input type="checkbox" id="customPromptEnabled" /> Prepend to every clip</label>
+    <textarea id="customPrompt" rows="3" placeholder="e.g. You are a senior reviewer. Summarise the open questions in this PR, then propose next steps."></textarea>
+
+    <p class="hint">Free · no account · nothing leaves your browser except GitHub API reads.</p>
+    <button id="closeSettings" class="secondary" type="button">Done</button>
+  </section>
+
+  <footer class="bottom">
+    <button id="shortcut" class="link" type="button"></button>
+    <span class="spacer"></span>
+    <button id="openSettings" class="link" type="button">Settings</button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
