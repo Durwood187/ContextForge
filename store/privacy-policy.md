@@ -18,4 +18,4 @@ Your settings (toggles, optional prompt text, optional GitHub token) are saved i
 ContextForge does not sell, share, or transfer user data, does not use it for any purpose other than the extension's single function, and does not use it to determine creditworthiness or for lending.
 
 ## Contact
-Questions: emstreet@me.com
+Questions: durwood.extensions@gmail.com
